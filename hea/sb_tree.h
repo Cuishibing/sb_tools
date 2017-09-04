@@ -3,11 +3,11 @@
 #include "sb_base.h"
 #include "sb_collection.h"
 typedef struct tree_node_{
-  sb_element e;
-  struct tree_node_ *node1;
-  struct tree_node_ *node2;
-  struct tree_node_ *parent;
-  int height;
+    sb_element e;
+    struct tree_node_ *node1;
+    struct tree_node_ *node2;
+    struct tree_node_ *parent;
+    int height;
 }sb_tree_node;
 
 /*
@@ -21,9 +21,9 @@ int sb_find_max_bs_tree(sb_tree_node *tr,sb_tree_node **tn);
 int sb_get_bs_tree(sb_bs_tree *bst,int key,sb_tree_node **node_);
 //遍例
 typedef enum traversal_type{
-  PRE,
-  MIDDLE,
-  BACK
+    PRE,
+    MIDDLE,
+    BACK
 }sb_traversal_type;
 int sb_traversal_bs_tree(sb_bs_tree *bst,arraylist *list,sb_traversal_type bt);
 int sb_remove_bs_tree(sb_bs_tree *bst,int key,sb_tree_node *node);
@@ -39,5 +39,10 @@ int sb_find_max_avl_tree(sb_tree_node *tr,sb_tree_node **tn);
 int sb_get_avl_tree(sb_avl_tree *bst,int key,sb_tree_node **node_);
 int sb_traversal_avl_tree(sb_avl_tree *bst,arraylist *list,sb_traversal_type bt);
 int sb_remove_avl_tree(sb_avl_tree *bst,int key,sb_tree_node *node);
+
+/*
+ * 计算一个树的高度,输入的节点为树的根节点
+ */
+int calculate_tree_height(sb_tree_node *node);
 
 #endif
