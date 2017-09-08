@@ -11,4 +11,4 @@ aux_source_directory(./src/collection SOURCE_FILES)
 aux_source_directory(./src/sort SOURCE_FILES)
 aux_source_directory(./src/tree SOURCE_FILES)
 
-add_executable(sb_tools ${SOURCE_FILES} src/tree/sb_avltree.c)
+add_executable(sb_tools ${SOURCE_FILES} src/tree/sb_avl_tree.c)

@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9501c8ba-da38-48f8-9227-cbf0f7498d85" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/tree/sb_avltree.c" afterPath="$PROJECT_DIR$/src/tree/sb_avl_tree.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hea/sb_tree.h" afterPath="$PROJECT_DIR$/hea/sb_tree.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sort/sb_select_sort.c" afterPath="$PROJECT_DIR$/src/sort/sb_select_sort.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tree/sb_avl_tree.c" afterPath="$PROJECT_DIR$/src/tree/sb_avl_tree.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tree/sb_bs_tree.c" afterPath="$PROJECT_DIR$/src/tree/sb_bs_tree.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sb_tree.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sb_tree.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hea/sb_tree.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sb_bs_tree.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tree/sb_bs_tree.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1220">
+              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -206,12 +211,12 @@
       <workItem from="1504529515923" duration="34000" />
       <workItem from="1504529801570" duration="4146000" />
       <workItem from="1504797743855" duration="1686000" />
-      <workItem from="1504875704128" duration="10591000" />
+      <workItem from="1504875704128" duration="10727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78347000" />
+    <option name="totallyTimeSpent" value="78483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1319" height="780" extended-state="6" />
@@ -522,14 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tree/sb_avl_tree.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -538,15 +535,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tree/sb_bs_tree.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1932">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tree/sb_avltree.c">
+    <entry file="file://$PROJECT_DIR$/src/tree/sb_avl_tree.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="110" column="4" lean-forward="false" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
@@ -560,6 +549,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tree/sb_avl_tree.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3940">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tree/sb_bs_tree.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1220">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
