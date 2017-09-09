@@ -33,11 +33,6 @@ int sb_find_min_avl_tree(sb_avl_tree *tree,sb_tree_node **tn);
 int sb_find_max_avl_tree(sb_avl_tree *tree,sb_tree_node **tn);
 int sb_get_avl_tree(sb_avl_tree *tree,int key,sb_tree_node **node_);
 int sb_traversal_avl_tree(sb_avl_tree *tree,arraylist *list,sb_traversal_type bt);
-int sb_remove_avl_tree(sb_avl_tree **tree,int key,sb_tree_node *node);
-
-/*
- * 计算一个树的高度,输入的节点为树的根节点
- */
-int calculate_tree_height(sb_tree_node *node);
+int sb_remove_avl_tree(sb_avl_tree **tree,sb_tree_node *need_remove_node);
 
 #endif

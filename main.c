@@ -25,7 +25,7 @@ int main() {
     sb_tree_node node;
     sb_element element;
 
-    for(int i=0;i<=100000;i++) {
+    for(int i=0;i<=10;i++) {
         element.key = i;
         node.e = element;
         sb_insert_avl_tree(&avl_tree, node);
@@ -33,8 +33,17 @@ int main() {
 
     printf_tree(*avl_tree);
     sb_tree_node *result_store = NULL;
-    sb_get_avl_tree(avl_tree,97,&result_store);
-    printf("%d \n",result_store->e.key);
+
+    sb_get_avl_tree(avl_tree,3,&result_store);
+    sb_remove_avl_tree(&avl_tree,result_store);
+
+    sb_get_avl_tree(avl_tree,4,&result_store);
+    sb_remove_avl_tree(&avl_tree,result_store);
+
+    sb_get_avl_tree(avl_tree,6,&result_store);
+    sb_remove_avl_tree(&avl_tree,result_store);
+
+    printf_tree(*avl_tree);
     return 0;
 }
 
