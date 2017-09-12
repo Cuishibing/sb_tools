@@ -3,7 +3,6 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 #include "sb_tree.h"
 sb_tree_node* insert_avl_tree(sb_tree_node **root,sb_tree_node *data);
 
@@ -76,6 +75,7 @@ sb_tree_node* insert_avl_tree(sb_tree_node **root,sb_tree_node *data){
     height(*root);
     return *root;
 }
+
 int height(sb_tree_node *node){
     if(node==NULL){
         return -1;
@@ -88,6 +88,7 @@ int height(sb_tree_node *node){
         right_height = node->node2->height;
     return (node->height = (left_height > right_height ? left_height : right_height)+1);
 }
+
 sb_tree_node* left_left_rotate(sb_tree_node *old_root){
     sb_tree_node * new_root = old_root->node1;
     old_root->node1 = new_root->node2;
@@ -95,6 +96,7 @@ sb_tree_node* left_left_rotate(sb_tree_node *old_root){
     height(old_root);
     return new_root;
 }
+
 sb_tree_node* right_right_rotate(sb_tree_node *old_root){
     sb_tree_node * new_root = old_root->node2;
     old_root->node2 = new_root->node1;
@@ -106,15 +108,19 @@ sb_tree_node* right_right_rotate(sb_tree_node *old_root){
 int sb_find_min_avl_tree(sb_avl_tree *tree,sb_tree_node **tn){
     return sb_find_min_bs_tree(tree,tn);
 }
+
 int sb_find_max_avl_tree(sb_avl_tree *tree,sb_tree_node **tn){
     return sb_find_max_bs_tree(tree,tn);
 }
+
 int sb_get_avl_tree(sb_avl_tree *tree,int key,sb_tree_node **node_){
     return sb_get_bs_tree(tree,key,node_);
 }
-int sb_traversal_avl_tree(sb_avl_tree *tree,arraylist *list,sb_traversal_type bt){
+
+int sb_traversal_avl_tree(sb_avl_tree *tree,sb_arraylist *list,sb_traversal_type bt){
     return sb_traversal_bs_tree(tree,list,bt);
 }
+
 int sb_remove_avl_tree(sb_avl_tree **tree,sb_tree_node *need_remove_node){
     *tree = remove_avl_tree(tree,need_remove_node);
     return 1;
@@ -166,4 +172,9 @@ sb_tree_node* remove_avl_tree(sb_tree_node **root,sb_tree_node *need_remove_node
     }
     height(*root);
     return *root;
+}
+
+int sb_clear_avl_tree(sb_avl_tree **tree){
+    //Todo:
+    return 0;
 }

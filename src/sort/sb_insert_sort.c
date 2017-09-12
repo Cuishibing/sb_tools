@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "sb_base.h"
-
-
 /*
   二分查找
 */
@@ -32,18 +29,3 @@ int insert_sort_binary_search(sb_element *array,int start,int end,sb_element tar
     insert_sort_binary_search(array, start, middle, target);
   else return middle;
 }
-
-/*void printf_array(int *array,int start,int end){
-  for(int i=start;i<=end;i++){
-      printf("%d ",array[i]);
-  }
-  printf("\n");
-  }*/
-
-/*int main(){
-  int len = 11;
-  int array[] = {1,3,5,7,56,7,34,2,76,-1,-78};
-  printf_array(array,0,len-1);
-  insert_sort(array, len);
-  printf_array(array,0,len-1);
-  }*/

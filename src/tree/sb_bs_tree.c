@@ -4,7 +4,7 @@
 #include "sb_tree.h"
 
 
-void back_traversal(sb_tree_node *node,arraylist *list);
+void back_traversal(sb_tree_node *node,sb_arraylist *list);
 int sb_get_bs_tree(sb_bs_tree *bst,int key,sb_tree_node **node_){
     assert(bst!=NULL);
     assert(node_!=NULL);
@@ -33,7 +33,7 @@ int sb_get_bs_tree(sb_bs_tree *bst,int key,sb_tree_node **node_){
     return 1;
 }
 
-int sb_traversal_bs_tree(sb_bs_tree *bst,arraylist *list,sb_traversal_type bt){
+int sb_traversal_bs_tree(sb_bs_tree *bst,sb_arraylist *list,sb_traversal_type bt){
     assert(bst!=NULL);
     assert(list!=NULL);
     sb_stack s;
@@ -87,7 +87,7 @@ int sb_traversal_bs_tree(sb_bs_tree *bst,arraylist *list,sb_traversal_type bt){
     return 1;
 }
 
-void back_traversal(sb_tree_node *node,arraylist *list){
+void back_traversal(sb_tree_node *node,sb_arraylist *list){
     if(node==NULL)
         return;
     back_traversal(node->node1, list);

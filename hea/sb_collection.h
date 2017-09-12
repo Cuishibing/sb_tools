@@ -7,13 +7,13 @@ typedef struct array_list{
   int length;
   int size;
   sb_element *elements;
-}arraylist;
-int sb_init_arraylist(arraylist *list,int size);
-int sb_insert_arraylist(arraylist *list,sb_element e,int position);
-int sb_get_arraylist(arraylist *list,int position,sb_element *e);
-int sb_set_arraylist(arraylist *list,int position,sb_element e,sb_element *pre_e);
-int sb_remove_position_arraylist(arraylist *list,int position,sb_element *e);
-int sb_clear_arraylist(arraylist *list);
+}sb_arraylist;
+int sb_init_arraylist(sb_arraylist *list,int size);
+int sb_insert_arraylist(sb_arraylist *list,sb_element e,int position);
+int sb_get_arraylist(sb_arraylist *list,int position,sb_element *e);
+int sb_set_arraylist(sb_arraylist *list,int position,sb_element e,sb_element *pre_e);
+int sb_remove_position_arraylist(sb_arraylist *list,int position,sb_element *e);
+int sb_clear_arraylist(sb_arraylist *list);
 
 typedef struct linked_list_node_{
   sb_element e;
@@ -40,7 +40,7 @@ int sb_enqueue(sb_queue *q,sb_element e);
 int sb_dequeue(sb_queue *q,sb_element *e);
 int sb_clear_queue(sb_queue *q);
 
-typedef arraylist sb_stack;
+typedef sb_arraylist sb_stack;
 int sb_init_stack(sb_stack *s,int size);
 int sb_push_stack(sb_stack *s,sb_element e);
 int sb_top_stack(sb_stack *s,sb_element *e);

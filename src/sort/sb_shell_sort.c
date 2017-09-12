@@ -3,7 +3,6 @@
 
 
 void sb_shell_sort(sb_element *array,int length,int *increments,int increment_length){
-
   for(int i=0;i<increment_length;i++){
     int increment = increments[i];
     int k;
