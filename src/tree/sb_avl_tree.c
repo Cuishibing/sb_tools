@@ -40,7 +40,7 @@ sb_tree_node* insert_avl_tree(sb_tree_node **root,sb_tree_node *data){
 
                 }
                 if(compare_result>0){//LR
-                    (*root)->node2 = right_right_rotate((*root)->node2);
+                    (*root)->node1 = right_right_rotate((*root)->node1);
                     *root = left_left_rotate(*root);
 
                 }
@@ -59,7 +59,7 @@ sb_tree_node* insert_avl_tree(sb_tree_node **root,sb_tree_node *data){
 
                 }
                 if(compare_result<0){//RL
-                    (*root)->node1 = left_left_rotate((*root)->node1);
+                    (*root)->node2 = left_left_rotate((*root)->node2);
                     *root = right_right_rotate(*root);
 
                 }

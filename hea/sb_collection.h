@@ -8,9 +8,28 @@ typedef struct array_list{
   int size;
   sb_element *elements;
 }sb_arraylist;
+
+/*
+ * 初始化arraylist
+ * 成功：非0
+ * 失败：0
+ * */
 int sb_init_arraylist(sb_arraylist *list,int size);
+
+/*
+ * 往arraylist里插入一个元素
+ * 成功：非0
+ * 失败：0
+ * */
 int sb_insert_arraylist(sb_arraylist *list,sb_element e,int position);
+
+/*
+ * 根据位置得到一个元素
+ * 成功：非0
+ * 失败：0
+ * */
 int sb_get_arraylist(sb_arraylist *list,int position,sb_element *e);
+
 int sb_set_arraylist(sb_arraylist *list,int position,sb_element e,sb_element *pre_e);
 int sb_remove_position_arraylist(sb_arraylist *list,int position,sb_element *e);
 int sb_clear_arraylist(sb_arraylist *list);

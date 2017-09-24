@@ -5,9 +5,13 @@
 
 
 void back_traversal(sb_tree_node *node,sb_arraylist *list);
+
 int sb_get_bs_tree(sb_bs_tree *bst,int key,sb_tree_node **node_){
-    assert(bst!=NULL);
-    assert(node_!=NULL);
+//    assert(bst!=NULL);
+//    assert(node_!=NULL);
+    if(bst == NULL || node_ == NULL){
+        return 0;
+    }
     sb_tree_node *iteator = bst;
     while(1){
         if(iteator->e.key==key){

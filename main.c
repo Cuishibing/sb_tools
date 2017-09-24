@@ -7,18 +7,15 @@
 
 
 int main() {
-    char *my_name = (char*)malloc(sizeof(char)*11);
-    strcpy(my_name,"cuishibing");
-    sb_element e;
-    e.value = my_name;
-    sb_map map;
-    sb_init_map(&map);
-    sb_insert_map(&map,"cui",4,e);
-    sb_element delete;
-    if(sb_remove_map(&map,"cui",4,&delete))
-        //printf("%s\n",delete.value);
-    free(delete.value);
-    printf("%s\n",my_name);
+    sb_avl_tree *tree = NULL;
+    sb_element element;
+    sb_tree_node node;
+    int data[] = {0,3,2};
+    for(int i=0;i<3;i++){
+        element.key = data[i];
+        node.e = element;
+        sb_insert_avl_tree(&tree,node);
+    }
     return 0;
 }
 
