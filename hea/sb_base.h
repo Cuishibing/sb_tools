@@ -1,6 +1,10 @@
 #ifndef SB_BASE_H_
 #define SB_BASE_H_
-
+/*
+ * 存放基本元素
+ * int 存放数据型数据
+ * void* 存放指针型数据
+ * */
 typedef struct element_{
   int key;
   void* value;
@@ -15,7 +19,7 @@ typedef struct element_{
 int sb_compare(sb_element first,sb_element second);
 
 /*
- * 比较两个元素是否相等
+ * 比较两个元素是否相等,key和value都要相等
  * 相等：非0
  * 不相等：0
  * */

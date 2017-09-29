@@ -37,6 +37,10 @@ int sb_get_bs_tree(sb_bs_tree *bst,int key,sb_tree_node **node_){
     return 1;
 }
 
+void false_release_tree_node(void *ptr){
+    //do nothing
+}
+
 int sb_traversal_bs_tree(sb_bs_tree *bst,sb_arraylist *list,sb_traversal_type bt){
     assert(bst!=NULL);
     assert(list!=NULL);
@@ -87,7 +91,7 @@ int sb_traversal_bs_tree(sb_bs_tree *bst,sb_arraylist *list,sb_traversal_type bt
             back_traversal(bst, list);
         }break;
     }
-    sb_clear_stack(&s);
+    sb_clear_stack(&s,false_release_tree_node);
     return 1;
 }
 

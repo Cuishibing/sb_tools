@@ -5,6 +5,7 @@
 #include <sb_tree.h>
 #include <wchar.h>
 #include <assert.h>
+#include <stdlib.h>
 
 int get_key_map(void *key,size_t key_size);
         int sb_init_map(sb_map *map){
@@ -67,14 +68,21 @@ int sb_remove_map(sb_map *map,void *key,size_t key_size,sb_element *deleted_elem
     }
 }
 
-int sb_clear_map(sb_map *map){
-    if(map==NULL){
-
-    }else{
-        return sb_clear_avl_tree(&map->tree);
-    }
+int sb_clear_map(sb_map *map,void(*release_value)(void*)){
+    assert(map != NULL);
+    sb_clear_avl_tree(map->tree,release_value);
+    map->length = 0;
     return 1;
 }
+
+int sb_free_map(sb_map *map,void(*release_value)(void*)){
+    assert(map != NULL);
+    sb_clear_map(map,release_value);
+    sb_free_avl_tree(map->tree,release_value);
+    free(map);
+    return 1;
+}
+
 int get_key_map(void *key,size_t key_size) {
     int key_int = 0,i;
     char *key_8_bit = (char*)key;
@@ -82,5 +90,4 @@ int get_key_map(void *key,size_t key_size) {
         key_int = (*key_8_bit++) + (key_int<< 6) + (key_int << 16) - key_int;
     }
     return (key_int & 0x7FFFFFFF);
-
 }

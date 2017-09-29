@@ -69,15 +69,6 @@ int sb_remove_position_arraylist(sb_arraylist *list,int position,sb_element *e){
   return 1;
 }
 
-int sb_clear_arraylist(sb_arraylist *list){
-  assert(list!=NULL);
-  free(list->elements);
-  list->elements = (sb_element*)malloc(sizeof(sb_element));
-  list->length = 0;
-  list->size = 1;
-  return 1;
-}
-
 void back_move_arraylist(sb_arraylist *list,int position){
   for(int i=list->length-1;i>=position;i--){
     list->elements[i+1]=list->elements[i];
@@ -104,4 +95,27 @@ int expand_arraylist(sb_arraylist *list){
   //  printf("list size:%d\n",list->size);
   list->elements = (sb_element*)realloc(list->elements,sizeof(sb_element)*list->size);
   return 1;
+}
+
+int sb_clear_arraylist(sb_arraylist *list,void(*release_value)(void*)){
+    assert(list!=NULL);
+    assert(release_value != NULL);
+    sb_element temp_e;
+    for(int i=list->length-1;i>=0;i--){
+        sb_remove_position_arraylist(list,i,&temp_e);
+        release_value(temp_e.value);
+    }
+    list->length = 0;
+    return 1;
+}
+
+int sb_free_arraylist(sb_arraylist **list,void(*release_value)(void*)){
+    assert(list != NULL);
+    sb_arraylist *list_rea = *list;
+    assert(list_rea != NULL);
+    sb_clear_arraylist(list_rea,release_value);
+    free(list_rea->elements);
+    free(list_rea);
+    *list = NULL;
+    return 1;
 }

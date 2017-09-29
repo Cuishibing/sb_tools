@@ -123,13 +123,26 @@ int sb_remove_position_linkedlist(sb_linkedlist *list,int position,sb_element *e
   list->length--;
   return 1;
 }
-int sb_clear_linkedlist(sb_linkedlist *list){
+int sb_clear_linkedlist(sb_linkedlist *list,void(*release_value)(void*)){
   assert(list!=NULL);
+    assert(release_value != NULL);
+    sb_element temp_e;
   for(int i=0;i<list->length;i++){
-    sb_remove_position_linkedlist(list,0,NULL);
+    sb_remove_position_linkedlist(list,0,&temp_e);
+      release_value(temp_e.value);
   }
   /*  list->head->next = list->rear;
   list->rear->pre = list->head;
   list->length = 0;*/
   return 1;
+}
+
+int sb_free_linkedlist(sb_linkedlist **list,void(*release_value)(void*)){
+    assert(list != NULL);
+    sb_linkedlist *rea_list = *list;
+    sb_clear_linkedlist(rea_list,release_value);
+    free(rea_list->head);
+    free(rea_list->rear);
+    free(rea_list);
+    *list = NULL;
 }

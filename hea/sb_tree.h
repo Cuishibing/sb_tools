@@ -36,7 +36,8 @@ int sb_find_max_avl_tree(sb_avl_tree *tree,sb_tree_node **tn);
 int sb_get_avl_tree(sb_avl_tree *tree,int key,sb_tree_node **node_);
 int sb_traversal_avl_tree(sb_avl_tree *tree,sb_arraylist *list,sb_traversal_type bt);
 int sb_remove_avl_tree(sb_avl_tree **tree,sb_tree_node *need_remove_node);
-int sb_clear_avl_tree(sb_avl_tree **tree);
+int sb_clear_avl_tree(sb_avl_tree *tree,void(*release_value)(void*));
+int sb_free_avl_tree(sb_avl_tree **tree,void(*release_value)(void*));
 
 typedef struct sb_map{
     sb_avl_tree *tree;
@@ -46,6 +47,7 @@ int sb_init_map(sb_map *map);
 int sb_insert_map(sb_map *map,void *key,size_t key_size,sb_element e);
 int sb_get_map(sb_map *map,void *key,size_t key_size,sb_element *result);
 int sb_remove_map(sb_map *map,void *key,size_t key_size,sb_element *deleted_elements);
-int sb_clear_map(sb_map *map);
+int sb_clear_map(sb_map *map,void(*release_value)(void*));
+int sb_free_map(sb_map *map,void(*release_value)(void*));
 
 #endif

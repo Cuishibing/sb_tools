@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "sb_tree.h"
 sb_tree_node* insert_avl_tree(sb_tree_node **root,sb_tree_node *data);
 
@@ -174,7 +175,24 @@ sb_tree_node* remove_avl_tree(sb_tree_node **root,sb_tree_node *need_remove_node
     return *root;
 }
 
-int sb_clear_avl_tree(sb_avl_tree **tree){
-    //Todo:
-    return 0;
+void release_avl_tree(sb_avl_tree **tree_node,void(*release_value)(void*)){
+    if(tree_node != NULL && *tree_node != NULL){
+        release_avl_tree(&(*tree_node)->node1,release_value);
+        release_avl_tree(&(*tree_node)->node2,release_value);
+        release_value((*tree_node)->e.value);
+        free(*tree_node);
+        *tree_node = NULL;
+    }
+}
+
+int sb_clear_avl_tree(sb_avl_tree *tree,void(*release_value)(void*)){
+    assert(tree != NULL);
+    release_avl_tree(&tree,release_value);
+    return 1;
+}
+
+int sb_free_avl_tree(sb_avl_tree **tree,void(*release_value)(void*)){
+    sb_clear_avl_tree(*tree,release_value);
+    *tree = NULL;
+    return 1;
 }
