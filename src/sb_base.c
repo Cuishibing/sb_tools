@@ -11,7 +11,7 @@ int sb_compare(sb_element first, sb_element second){
 }
 
 int sb_equals(sb_element first, sb_element second){
-    if(first.key==second.key||first.value==second.value)
+    if(first.key==second.key&&first.value==second.value)
       return 1;
     return 0;
 }
