@@ -7,7 +7,7 @@ int main() {
     for(int i=0;i<10;i++){
         array[i].key = array_data[i];
     }
-    sb_merge_sort(array,10);
+    sb_select_sort(array,10,HEAP);
     for(int i=0;i<10;i++){
         printf("%d ",array[i].key);
     }

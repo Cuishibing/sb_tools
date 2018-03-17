@@ -43,8 +43,7 @@ void select_sort_build_heap(sb_element *array,int index){
     if(index<=0)
         return;
     int parent = (index-1) / 2;
-    if(sb_compare(array[parent],array[index])>0||
-       sb_compare(array[parent],array[index])==0){//parent>=index
+    if(sb_compare(array[parent],array[index])>=0){//parent>=index
         if(index%2==0){//是偶数,说明是右儿子
             int brother = index - 1;
             if(sb_compare(array[brother],array[index])<0){//brother<index
