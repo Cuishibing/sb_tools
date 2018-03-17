@@ -16,7 +16,7 @@ void merge_sort_real(sb_element *array,sb_element *result_store,int start,int en
   if(start==end)
     return;
   if((start+1)==end){//已经只有两个元素了
-    if(sb_compare(array[start],array[end])>0||sb_compare(array[start],array[end])==0)//start>=end
+    if(sb_compare(array[start],array[end])>=0)//start>=end
       sb_swap(array,start,end);
     return;
   }
