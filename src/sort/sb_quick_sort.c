@@ -6,24 +6,22 @@ int get_key(sb_element *array,int start,int end);
 void quick_sort_real(sb_element *array,int start,int end);
 
 int get_key(sb_element *array,int start,int end){
-  int middle = (end + start) / 2;
-  return middle;//暂时返回数据的中间元素作为枢杻元
+  return (end + start) / 2;;//暂时返回数据的中间元素作为枢杻元
 }
 
 void quick_sort_real(sb_element *array,int start,int end){
-  if(!(start<end&&start>-1)){
+  if(start>=end){
     return;
   }
   int left_index = start;
   int right_index = end - 1;
   int key = get_key(array,start,end);
   sb_swap(array,key,end);//先把枢纽元和最后一个元素交换
-  while(1){
-    while(sb_compare(array[left_index],array[end])<0){//left_index<end
+  while(left_index <= right_index){
+    while(sb_compare(array[left_index],array[end])<0 && left_index <= right_index){//left_index<end
       left_index++;
     }
-    while(sb_compare(array[right_index],array[end])>0||
-	  sb_compare(array[right_index],array[end])==0){//right_index>=end
+    while(sb_compare(array[right_index],array[end])>0 && left_index <= right_index){//right_index>=end
       right_index--;
     }
     if(left_index<right_index){
