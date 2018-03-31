@@ -15,6 +15,12 @@ typedef struct tree_node_{
   二叉查找树的通用操作
 */
 typedef sb_tree_node sb_bs_tree;
+/**
+ * 查找最小元素
+ * @param tree 目标树
+ * @param tn 存放查询结果的指针
+ * @return 0:失败,0以外成功
+ * */
 int sb_find_min_bs_tree(sb_tree_node *tree,sb_tree_node **tn);
 int sb_find_max_bs_tree(sb_tree_node *tree,sb_tree_node **tn);
 int sb_get_bs_tree(sb_bs_tree *tree,int key,sb_tree_node **node_);
